@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/invoice.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald:wght@300;500&family=PT+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="my-5" id="output">Your Text Here...</div>
+          <div
+            style="bottom: 30px; left: 0; right: 0; max-width: 500px"
+            class="bg-white position-fixed mx-auto border rounded row g-3 pb-3 px-2"
+          >
+            <div class="col-12">
+              <div class="d-flex justify-content-between mb-2">
+                <label class="form-label" for=""> Say something..... </label>
+                <div class="d-flex align-items-center">
+                  <button
+                    class="btn btn-sm btn-outline-dark me-2" id="speechToText">
+                    <i class="bi bi-mic"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-dark me-2" id="textToSpeak">
+                    <i class="bi bi-volume-up"></i>
+                  </button>
+                  <div class=" ">Count : <span id="count">0</span></div>
+                </div>
+              </div>
+              <textarea
+                class="form-control"
+                name=""
+                id="text"
+                cols="30"
+                rows=""
+              ></textarea>
+            </div>
+            <div class="col">
+              <label for="">Font family</label>
+              <select class="form-select" id="fontFamily" name="">
+                <option value="">Select font</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="">Select Color</label>
+              <input
+                type="color"
+                id="color"
+                class="form-control w-100 form-control-color"
+              />
+            </div>
+            <div class="col">
+              <label class="form-label" for="">Fontsize</label>
+              <input
+                type="range"
+                id="fontSize"
+                min="0"
+                max="100"
+                value="16"
+                class="form-range"
+              />
+              <select id="voiceSelect"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/text_control.js"></script>
+  </body>
+</html>

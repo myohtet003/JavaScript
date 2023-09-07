@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/list-builder.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class=" " id=" builder">
+                    <h4 class="my-3">List Builder</h4>
+                    <div class="input-group">
+                        <input type="text" id="textInput" class=" form-control"/>
+                        <button id="createButton" class=" btn btn-dark"> 
+                            <i class="bi bi-plus-circle"></i> Add list
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+                        <p>Total <span class="badge bg-black" id="total">0</span></p>
+                        <p>Done <span class="badge bg-black" id="doneTotal">0</span></p>
+
+                    </div>
+                    <ul id="lists" class="list-group mt-4 py-2"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/list-builder.js"></script>
+</body>
+</html>

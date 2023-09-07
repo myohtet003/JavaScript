@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+$font-family-sans-serif:"Montserrat",sans-serif;
+$enable-rounded:false;
+$component-active-bg: black;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.dropdown-icon{
+    // display: none;
+    transform: scale(0);
+    transition: 0.5s;
+
+};
+
+tr:hover .dropdown-icon{
+    // display: inline;
+    transform: scale(1);
+};
+
+.bg-transparent-50 {
+    background-color: rgba(0,0,0,0.5);
+};
+
+.side-bar {
+    transform: translateX(-100%);
+    transition: 0.5s;
+};
+
+.side-bar.active {
+    transform: translateX(0);
+};
+  
+.menu:active {
+    transform: scale(0.8);
+};

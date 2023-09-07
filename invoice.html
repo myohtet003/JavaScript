@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/invoice.css">
+</head>
+<body>
+
+    <div id="app">
+        <!-- <div id="sideBar" class="side-bar position-fixed w-25 vh-100 bg-black">
+            <div
+              class="d-flex justify-content-between text-white p-2 align-items-center"
+            >
+              <h4>MMS IT</h4>
+              <i class="bi bi-x-lg menu"></i>
+            </div>
+        </div> -->
+        <div class="container">
+            <div class="row w-75 m-auto">
+                <div class="col-12">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        
+                        <h2>
+                            <i class="bi bi-list menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i>
+                        Invoice app
+                        </h2>
+                        <button class="btn btn-outline-dark d-print-none" onclick="print()">
+                            <i class="bi bi-printer"></i>
+                            Print
+                        </button>
+                    </div>
+                    <div class="border p-3 mb-3 d-print-none">
+                        <form id="invoiceForm">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="">
+                                        <label class="form-label" for="">Select service
+                                            <span id="addServiceOpenBtn" class="badge bg-black rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                Add Service
+                                            </span>
+                                        </label>
+                                        <select class="form-select" name="" id="selectService" required>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="" class="form-label">Quantity</label>
+                                    <input type="number" id="quantity" class="form-control" required/>
+        
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-lg btn-dark w-100 h-100">
+                                        <i class="bi bi-plus-circle"></i>
+                                        Add
+                                    </button>
+                                </div>
+                            </div>            
+                        </form>
+                    </div> 
+                    <table class="table table-bordered d-none" id="listTable" >
+                        <thead>
+                            <tr>
+                                <th class=" w-50">Service</th>
+                                <th class="text-end">Quantity</th>
+                                <th class="text-end">Unit Price</th>
+                                <th class="text-end">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lists"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-end" colspan="3">Sub Total</td>
+                                <td class="text-end">$<span id="subTotal">0</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-end" colspan="3">Tax (5%)</td>
+                                <td class="text-end">$<span id="tax">0</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-end" colspan="3">Total</td>
+                                <td class="text-end">$<span id="Total">0</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <h1 class="d-none d-print-block"> This will show in print</h1>
+
+        <!-- <div id="AddServiceModal" class="d-none position-fixed bg-transparent-50 w-100 top-0 end-0">
+            <div class="row min-vh-100 justify-content-center align-items-center">
+                <div class="col-12 col-md-6 col-lg-4">       
+                </div>
+            </div>
+        </div> -->
+        <!-- Button trigger modal -->
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="AddServiceModal" tabindex="-1" aria-labelledby="AddServiceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="AddServiceModalLabel">Add New Service</h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="AddServiceForm">
+                            <div class="bg-white p-5">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Service Title</label>
+                                    <input type="text" name="serviceTitle" class="form-control" required/>
+                                </div>
+                                <div class="mb-5">
+                                    <label for="" class="form-label">Price</label>
+                                    <input type="number" name="servicePrice" class="form-control" required/>
+                                </div>                            
+                            </div>
+                        </form>                    
+                    </div>
+                    <div class="modal-footer">
+                        <button id="CloseServiceModalBtn" class=" btn btn-outline-dark" data-bs-dismiss="modal">Close</button>    
+                        <button class=" btn btn-dark" form="AddServiceForm">Add New</button>
+                    </div>
+                </div>
+            </div>            
+        </div>
+          
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+              </div>
+              <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/invoice.js"></script>
+</body>
+</html>
